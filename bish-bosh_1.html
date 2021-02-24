@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bish Bosh 1.0</title>
+   
+</head>
+<body>
+   <h1>Press F12, select Console</h1>
+   <script>
+      console.warn('Starting Bish Bosh calculations...');
+
+      function bish_bosh(n) {
+         if ((n % 4 == 0) && (n % 3 == 0)) 
+            return 'Bish-Bosh';
+         if (n % 4 == 0) 
+            return 'Bosh';
+         if (n % 3 == 0) 
+            return 'Bish';
+         else 
+            return n;
+      }
+
+      let output = '';
+      for (var i=1; i<=100; i++) {
+         output += bish_bosh(i) + ', '; 
+      }
+      // remove last character (,) and write output string 
+      const text = output.slice(0, -2);
+      console.log(text);
+   </script>
+</body>
+</html>
