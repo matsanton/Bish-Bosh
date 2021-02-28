@@ -1,40 +1,37 @@
 
 // Get input elements
-const elButton = document.querySelector('button');
 const elLoopSize = document.getElementById('loop-size');
 const elBishDivisor = document.getElementById('bish-num');
 const elBoshDivisor = document.getElementById('bosh-num');
+const elButton = document.querySelector('button');
 
 // get output elements
-const elStatus = document.querySelector('#status');
+const elError = document.querySelector('#error-msg');
 const elResults = document.querySelector('#results');
-const elInformation = elResults.firstElementChild;
-const elResult = elResults.lastElementChild;
 
 elButton.addEventListener('click', calculate);
 
 function calculate() {
-   elStatus.style.display = 'none';
+   elError.style.visibility = 'hidden';
    const txtLoopSize = elLoopSize.value.trim();
    const txtBishNum = elBishDivisor.value.trim();
    const txtBoshNum = elBoshDivisor.value.trim();
-
    if (txtLoopSize.length == 0 || txtBishNum.length == 0 || txtBoshNum.length == 0) {
-      elStatus.textContent = 'Please enter values in all fields';
-      elStatus.style.display = 'block';
+      elError.textContent = 'Please enter values in all fields';
+      elError.style.visibility = 'visible';
       return;
    }
    const loopSize = parseInt(txtLoopSize);
    const bishNum = parseInt(txtBishNum);
    const boshNum = parseInt(txtBoshNum);
    if (isNaN(loopSize) || isNaN(bishNum) || isNaN(boshNum)) {
-      elStatus.textContent = 'Please enter only numeric values';
-      elStatus.style.display = 'block';
+      elError.textContent = 'Please enter only numeric values';
+      elError.style.visibility = 'visible';
       return;
    }
    if (loopSize < 1) {
-      elStatus.textContent = 'Please enter a postive value for the loop size';
-      elStatus.style.display = 'block';
+      elError.textContent = 'Please enter a postive value for the loop size';
+      elError.style.visibility = 'visible';
       return;
    }
    let output = '';
@@ -48,9 +45,9 @@ function calculate() {
       else
          output += n + ', ';
    }
-   // remove last character (,) and write output string 
+   // remove last characters (', ') and write output string 
    const outputAdjusted = output.slice(0, -2);
-   elResult.textContent = outputAdjusted;
+   elResults.textContent = outputAdjusted;
 }
 
 
