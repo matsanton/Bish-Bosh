@@ -17,7 +17,7 @@ function calculate() {
    const txtBishNum = elBishDivisor.value.trim();
    const txtBoshNum = elBoshDivisor.value.trim();
    if (txtLoopSize.length == 0 || txtBishNum.length == 0 || txtBoshNum.length == 0) {
-      elError.textContent = 'Please enter values in all fields';
+      elError.textContent = 'Skriv in värden i alla fält';
       elError.style.visibility = 'visible';
       return;
    }
@@ -25,12 +25,12 @@ function calculate() {
    const bishNum = parseInt(txtBishNum);
    const boshNum = parseInt(txtBoshNum);
    if (isNaN(loopSize) || isNaN(bishNum) || isNaN(boshNum)) {
-      elError.textContent = 'Please enter only numeric values';
+      elError.textContent = 'Ange endast numeriska värden';
       elError.style.visibility = 'visible';
       return;
    }
    if (loopSize < 1) {
-      elError.textContent = 'Please enter a postive value for the loop size';
+      elError.textContent = 'Ange ett positivt värde för storleken på loopen';
       elError.style.visibility = 'visible';
       return;
    }
