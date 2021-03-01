@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv-SE">
 
 <head>
    <meta charset="UTF-8">
@@ -13,20 +13,28 @@
 <body>
    <header>
       <h1>Bish-Bosh 2.0</h1>
+      <p>Bish-Bosh listar alla tal mellan 1 och 100. Men om talet är jämnt delbart med 3 visas 'Bish' istället
+         ,om talet är jämnt delbart med 4 visas 'Bosh' och om talet är jämnt delbart med både 3 och 4 skrivs 'Bish-Bosh'
+         istället.
+         Du kan ändra värdena själv för antal tal som ska skrivas ut och vilka tal som ska vara jämnt delbara för att
+         skriva ut 'Bish', 'Bosh'
+         eller 'Bish-Bosh'.
+      </p>
    </header>
 
    <div class="container">
+
       <div id="input">
-         <label for="loop-size">Loop size:</label><br>
+         <label for="loop-size">Storlek på loopen:</label><br>
          <input type="text" id="loop-size" value="100"><br>
 
-         <label for="bish-num">Number for Bish:</label><br>
+         <label for="bish-num">Nummer för Bish:</label><br>
          <input type="text" id="bish-num" value="3"><br><br>
 
-         <label for="bosh-num">Number for Bosh:</label><br>
+         <label for="bosh-num">Nummer för Bosh:</label><br>
          <input type="text" id="bosh-num" value="4"><br><br>
 
-         <button type="button">Run</button>
+         <button type="button">Visa beräkning</button>
       </div>
    </div>
 
